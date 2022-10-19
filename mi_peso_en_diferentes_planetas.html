@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #080B30;
+            text-align: center;
+            color: white;
+            font-family: Helvetica;
+        }
+
+        #peso {
+            color: #FFF100;
+        }
+
+        #nomPlaneta {
+            color: #79C5E0;
+        }
+
+        #pesoFinal {
+            color: #EC1C24;
+        }
+
+        img {
+            align-items: center;
+            margin-top: 5px;
+            width: 500px;
+            height: 500px;
+        }
+
+        div {
+            align-items: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tu peso en otro planeta</h1>
+    <p>¿Sabias que en la tierra pesas diferente que en Marte o Jupiter?</p>
+    <script>
+        var planeta_usuario = parseInt(prompt("Elige un planeta \n 1. Marte \n 2. Jupiter:"));
+        var usuario = prompt("Ingresa tu peso: ");
+        var g_tierra = 9.8;
+        var g_marte = 3.7;
+        var g_jupiter = 24.8;
+        var peso = parseFloat(usuario);
+        var nom_planeta = "";
+        if (planeta_usuario == 1) {
+            var nom_planeta = "Marte";
+            var peso_final = peso * g_marte / g_tierra;
+            // peso_final = parseInt(peso_final);
+            // document.write("Si en la tierra pesas "+peso+" kg En Marte pesarias "+peso_final+" kg");
+        }
+        else if (planeta_usuario == 2) {
+            var nom_planeta = "Jupiter";
+            var peso_final = peso * g_jupiter / g_tierra;
+            // peso_final = parseInt(peso_final);
+            // document.write("Si en la tierra pesas "+peso+" kg En Jupiter pesarias"+peso_final+" kg");
+        }
+        else {
+            alert("ingresó un dato erroneo")
+        }
+        peso_final = parseInt(peso_final);
+        document.write("Si en la tierra pesas <strong id=peso>" + peso + "</strong> kg En <strong id=nomPlaneta>" + nom_planeta + "</strong> pesarias <strong id=pesoFinal>" + peso_final + "</strong> kg");
+    </script>
+    <div>
+        <img src="imagen fondo.png">
+    </div>
+</body>
+</html>
